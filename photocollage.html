@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collage</title>
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+<i class="em em-bird" aria-role="presentation" aria-label="BIRD"></i>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #FF78A2, #FFAD9E);
+            overflow: hidden;
+        }
+
+        .photo-collage-container {
+            height: 100vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .photo-collage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .photo {
+            position: relative;
+            object-fit: cover;
+            width: 100%;
+            min-height: 300px; /* Set a minimum height for the images */
+            border: 5px solid #fff; /* Border color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Image shadow */
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+            z-index: 999;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f4119d8d;
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover .overlay {
+            transform: translateY(0);
+        }
+
+        /* Replace these image URLs with your own */
+        .photo:nth-child(1) { background: url('/images/image1.jpg') center/cover; }
+        .photo:nth-child(2) { background: url('/images/image2.jpg') center/cover; }
+        .photo:nth-child(3) { background: url('/images/image3.jpg') center/cover; }
+        .photo:nth-child(4) { background: url('/images/image5.jpg') center/cover; }
+        .photo:nth-child(5) { background: url('/images/image7.jpg') center/cover; }
+        .photo:nth-child(6) { background: url('/images/image6.jpg') center/cover; }
+        .photo:nth-child(7) { background: url('/images/image8.jpg') center/cover; }
+        .photo:nth-child(8) { background: url('/images/image4.jpg') center/cover; }
+        .photo:nth-child(9) { background: url('/images/image9.jpg') center/cover; }
+
+        @media (max-width: 768px) {
+            .photo-collage {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="photo-collage-container">
+        <h1>Our Sweet Memories</h1>
+        <div class="photo-collage">
+            <div class="photo">
+                <div class="overlay">
+                    <h2>Our first Date</h2>
+                    <p>4th August,2023 our first movie date </p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>Our first stay</h2>
+                    <p>Capturing a cute photo in front of the police station is not scary if i'm with you<i class="em em-laughing" aria-role="presentation" aria-label="SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES"></i></p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>We in kolkata</h2>
+                    <p>Meeting you in your every birthday will be my first priority</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>Morning journey with you</h2>
+                    <p>A morning train journey with you towards durgapur, still unforgotable</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>Our first Durgapuja together</h2>
+                    <p>I was litrally stuck when i see you in saree for the first time</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>We in durgapur</h2>
+                    <p>Our one of the memorable day, still remember the coffee bottle we are having</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>Our 2nd day in same room</h2>
+                    <p>I can still feel the heat from your body, my personal heater</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>We at princepGhat</h2>
+                    <p>The coincidence of Jeams princep birth and death day with your birthdays minus 2 is still a coincidence</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="overlay">
+                    <h2>We at parkstreet</h2>
+                    <p>That beautiful night will remain still in my heart forever, Thanks for everything my Love</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

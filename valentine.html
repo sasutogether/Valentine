@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heart</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .heart-container {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(45deg, #ff78a2, #ffad9e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart {
+      height: 100px;
+      width: 100px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: beat 3s infinite alternate;
+      position: absolute;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 50px;
+    }
+
+    .heart-1 {
+      top: 110px;
+      left: 110px;
+    }
+
+    .heart-2 {
+      top: 110px;
+      right: 110px;
+    }
+
+    .heart-3 {
+      bottom: 110px;
+      left: 110px;
+    }
+
+    .heart-4 {
+      bottom: 110px;
+      right: 110px;
+    }
+    .heart-5 {
+      top: 140px;
+      animation: beat1 1s infinite alternate;
+    }
+    #content {
+      margin-top: 90px;
+      text-align: center;
+      z-index: 1;
+      color: white;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #fff;
+      color: #ff78a2;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #ff78a2;
+      color: #fff;
+    }
+
+    @keyframes beat {
+      to {
+        transform: rotate(720deg) scale(1.2);
+      }
+    }
+    @keyframes beat1 {
+      to {
+        transform: rotate(-45deg) scale(1.5);
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .heart {
+        height: 60px;
+        width: 60px;
+      }
+      .heart::before,
+      .heart::after {
+        width: 60px;
+        height: 60px;
+      }
+      .heart::before {
+        top: -30px;
+        left: 0;
+      }
+
+      .heart::after {
+        top: -3px;
+        left: 28px;
+      }
+      .heart-1 {
+        top: 80px;
+        left: 55px;
+      }
+
+      .heart-2 {
+        top: 80px;
+        right: 55px;
+      }
+
+      .heart-3 {
+        bottom: 80px;
+        left: 55px;
+      }
+
+      .heart-4 {
+        bottom: 80px;
+        right: 55px;
+      }
+      .heart-5 {
+        top: 335px;
+      }
+      #content {
+        margin-top: 20px;
+      }
+      h1 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+  <body>
+    <div class="heart-container">
+      <div class="heart heart-1"></div>
+      <div class="heart heart-2"></div>
+      <div class="heart heart-3"></div>
+      <div class="heart heart-4"></div>
+      <div class="heart heart-5"></div>
+
+      <div id="content">
+        <h1>Happy Valentine's Day, My Love!</h1>
+        <p>You are the light of my life, and my heart beats for you.</p>
+        <p>
+          Every moment with you is a blessing, and I'm grateful for the love we
+          share. Thank you for being my Valentine!
+        </p>
+        <button onclick="redirectToMemories()">Our Memories</button>
+      </div>
+    </div>
+
+    <script>
+      function redirectToMemories() {
+        window.location.href = "photocollage.html";
+      }
+    </script>
+  </body>
+</html>
