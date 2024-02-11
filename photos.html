@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our memories</title>
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(90deg, #ff78a2, #ffad9e);
+      /* overflow: hidden; */
+    }
+    .header {
+      width: 100%;
+      height: 8vh;
+      background: #ff78a2;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .header h1 {
+      color: #fff;
+      letter-spacing: 0.5px;
+      line-height: 1;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .container {
+      width: 100%;
+      height: 140vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      place-items: center;
+      gap: 30px;
+    }
+    .container .card {
+      width: 315px;
+      height: 315px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      box-shadow: rgba(247, 228, 228, 0.897) 0px 19px 38px,
+        rgba(201, 182, 182, 0.845) 0px 15px 12px;
+    }
+    .container .last-card {
+      margin-bottom: 0px;
+    }
+    .container .card .inner-card {
+      width: 308px;
+      height: 308px;
+      z-index: 2;
+      border-radius: 10px;
+    }
+    .container .card .inner-card img {
+      width: 100%;
+      height: 100%;
+      /* display: none; */
+      border-radius: 10px;
+    }
+    .card__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #f4119d8d;
+      transform: rotateX(-90deg);
+      transform-origin: bottom;
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .container .card:hover .card__content {
+      transform: rotateX(0deg);
+    }
+
+    .card__title {
+      margin: 0;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(217, 7, 7, 0.2);
+    }
+
+    .card__description {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .blob {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      /* border-radius: 50%; */
+      background-image: linear-gradient(
+        to bottom,
+        #810bc0,
+        #ad0098,
+        #c00070,
+        #c4004d,
+        #bd0030,
+        #b93b1a,
+        #b05904,
+        #a37100,
+        #95992e,
+        #80be68,
+        #68deac,
+        #5ffbf1
+      );
+      opacity: 1;
+      /* filter: blur(12px); */
+      animation: blob-bounce 3s infinite linear;
+    }
+
+    @keyframes blob-bounce {
+      0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+
+      25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      }
+
+      50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      }
+
+      75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      }
+
+      100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    }
+
+    .section {
+      background: linear-gradient(90deg, #ff78a2, #ffad9e);
+      width: 100%;
+      height: 50px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1260px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+  <body>
+    <div class="header">
+      <h1>
+        <i class="em em-bird" aria-role="presentation" aria-label="BIRD"></i>
+        Our Sweet memories
+      </h1>
+    </div>
+    <div class="container" data-aos="fade-up">
+      <!--* 1st card -->
+      <div class="card" data-aos="fade-right">
+        <div class="inner-card">
+          <img src="Images/image1.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">Our first Date</p>
+            <p class="card__description">
+              4th August,2023 our first movie date
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 2nd card -->
+      <div class="card">
+        <div class="inner-card" data-aos="fade-left">
+          <img src="Images/image2.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">Our first stay</p>
+            <p class="card__description">
+              Capturing a cute photo in front of the police station is not scary
+              if i'm with you
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 3rd card -->
+      <div class="card" data-aos="fade-right">
+        <div class="inner-card">
+          <img src="Images/image3.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">We in kolkata</p>
+            <p class="card__description">
+              Meeting you in your every birthday will be my first priority
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 4th card -->
+      <div class="card" data-aos="fade-left">
+        <div class="inner-card">
+          <img src="Images/image5.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">Morning journey with you</p>
+            <p class="card__description">
+              A morning train journey with you towards durgapur, still
+              unforgotable
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 5th card -->
+      <div class="card" data-aos="fade-right">
+        <div class="inner-card">
+          <img src="Images/image7.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">Our first Durgapuja together</p>
+            <p class="card__description">
+              I was litrally stuck when i see you in saree for the first time
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 6th card -->
+      <div class="card" data-aos="fade-left">
+        <div class="inner-card">
+          <img src="Images/image6.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">We in durgapur</p>
+            <p class="card__description">
+              Our one of the memorable day, still remember the coffee bottle we
+              are having
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 7th card -->
+      <div class="card last-card" data-aos="fade-right">
+        <div class="inner-card">
+          <img src="Images/image8.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">Our 2nd day in same room</p>
+            <p class="card__description">
+              I can still feel the heat from your body, my personal heater
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 8th card -->
+      <div class="card last-card" data-aos="fade-left">
+        <div class="inner-card">
+          <img src="Images/image4.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">We at princepGhat</p>
+            <p class="card__description">
+              The coincidence of Jeams princep birth and death day with your
+              birthdays minus 2 is still a coincidence
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+      <!--* 9th card -->
+      <div class="card last-card" data-aos="fade-right">
+        <div class="inner-card">
+          <img src="Images/image9.jpg" alt="our 1st image" />
+          <div class="card__content">
+            <p class="card__title">We at parkstreet</p>
+            <p class="card__description">
+              That beautiful night will remain still in my heart forever, Thanks
+              for everything my Love
+            </p>
+          </div>
+        </div>
+        <div class="blob"></div>
+      </div>
+    </div>
+    <div class="section"></div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
